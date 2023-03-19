@@ -1,0 +1,476 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod]{scrreprt}
+
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{5}
+% Make \paragraph and \subparagraph free-standing
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{241,243,245}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.40,0.45,0.13}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\ExtensionTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.28,0.35,0.67}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.46,0.62}{#1}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\NormalTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.07,0.07,0.07}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newlength{\cslentryspacingunit} % times entry-spacing
+\setlength{\cslentryspacingunit}{\parskip}
+\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+  \let\oldpar\par
+  \def\par{\hangindent=\cslhangindent\oldpar}
+  \fi
+  % set entry spacing
+  \setlength{\parskip}{#2\cslentryspacingunit}
+ }%
+ {}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+
+\KOMAoption{captions}{tableheading}
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[many]{tcolorbox}}
+\@ifpackageloaded{fontawesome5}{}{\usepackage{fontawesome5}}
+\definecolor{quarto-callout-color}{HTML}{909090}
+\definecolor{quarto-callout-note-color}{HTML}{0758E5}
+\definecolor{quarto-callout-important-color}{HTML}{CC1914}
+\definecolor{quarto-callout-warning-color}{HTML}{EB9113}
+\definecolor{quarto-callout-tip-color}{HTML}{00A047}
+\definecolor{quarto-callout-caution-color}{HTML}{FC5300}
+\definecolor{quarto-callout-color-frame}{HTML}{acacac}
+\definecolor{quarto-callout-note-color-frame}{HTML}{4582ec}
+\definecolor{quarto-callout-important-color-frame}{HTML}{d9534f}
+\definecolor{quarto-callout-warning-color-frame}{HTML}{f0ad4e}
+\definecolor{quarto-callout-tip-color-frame}{HTML}{02b875}
+\definecolor{quarto-callout-caution-color-frame}{HTML}{fd7e14}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{bookmark}{}{\usepackage{bookmark}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Зміст}
+\else
+  \newcommand\contentsname{Зміст}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Рис.}
+\else
+  \newcommand\figurename{Рис.}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Таблиця}
+\else
+  \newcommand\tablename{Таблиця}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Лістинг}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[many]{tcolorbox}}
+\makeatother
+\makeatletter
+\@ifundefined{shadecolor}{\definecolor{shadecolor}{rgb}{.97, .97, .97}}
+\makeatother
+\makeatletter
+\makeatother
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Основи роботи з даними в R},
+  pdfauthor={Юрій Клебан},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Основи роботи з даними в R}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{Навчальний посібник з курсу \textbf{Аналіз даних в \texttt{R}}
+для студентів спеціальності економічна кібернетика, фінанси, 2 курс}
+\author{Юрій Клебан}
+\date{Invalid Date}
+
+\begin{document}
+\maketitle
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[enhanced, borderline west={3pt}{0pt}{shadecolor}, breakable, frame hidden, interior hidden, sharp corners, boxrule=0pt]}{\end{tcolorbox}}\fi
+
+\renewcommand*\contentsname{Зміст}
+{
+\hypersetup{linkcolor=}
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+\bookmarksetup{startatroot}
+
+\hypertarget{ux43fux440ux43e-ux43fux43eux441ux456ux431ux43dux438ux43a}{%
+\chapter*{Про
+посібник}\label{ux43fux440ux43e-ux43fux43eux441ux456ux431ux43dux438ux43a}}
+\addcontentsline{toc}{chapter}{Про посібник}
+
+Юрій Клебан\\
+2023-03-19
+
+\hfill\break
+
+\begin{figure}
+
+{\centering 
+
+\href{https://doi.org/10.5281/zenodo.7251419}{\includegraphics{https://zenodo.org/badge/DOI/10.5281/zenodo.7251419.svg}}
+
+}
+
+\end{figure}
+
+Замінити інформацію про курс Аналіз даних
+
+Матеріали навчального посібника підготовлені для читання курсу
+\textbf{\emph{``Вступ до прикладного програмування в R''}}
+\texttt{{[}05.250{]}} студентам 1-го року навчання спеціальності
+економічна кібернетика \href{https://oa.edu.ua}{Національного
+університету ``Острозька академія''}.
+
+\hypertarget{ux43eux43fux438ux441-ux43dux430ux432ux447ux430ux43bux44cux43dux43eux457-ux434ux438ux441ux446ux438ux43fux43bux456ux43dux438}{%
+\section*{Опис навчальної
+дисципліни}\label{ux43eux43fux438ux441-ux43dux430ux432ux447ux430ux43bux44cux43dux43eux457-ux434ux438ux441ux446ux438ux43fux43bux456ux43dux438}}
+\addcontentsline{toc}{section}{Опис навчальної дисципліни}
+
+Навчальна дисципліна спрямована на вивчення основ практичного
+застосування популярної мови R для проведення статистичних досліджень в
+економіці.
+
+У процесі вивчення курсу розглядаються теми, що стосуються теоретичних
+основ та практичної реалізації алгоритмів, завантаження, підготовки та
+обробки економічних даних.
+
+Місце навчальної дисципліни у підготовці здобувачів: програмні
+результати дисципліни використовуються під час вивчення таких навчальних
+дисциплін: ``Алгоритми та структури даних'', ``Аналіз даних в R'',
+``Прикладне математичне моделювання в R'', ``Підготовка аналітичних
+звітів''. Закріплення на практиці здобутих програмних результатів
+відбувається під час проходження навчальної практики з курсу
+``Економіко-математичне моделювання''.
+
+\hypertarget{ux43cux435ux442ux430-ux434ux438ux441ux446ux438ux43fux43bux456ux43dux438}{%
+\section*{Мета
+дисципліни}\label{ux43cux435ux442ux430-ux434ux438ux441ux446ux438ux43fux43bux456ux43dux438}}
+\addcontentsline{toc}{section}{Мета дисципліни}
+
+Мета навчальної дисципліни -- формування у студентів теоретичних знань
+та практичних навичок використання мови програмування R для роботи з
+даними та базовими структурами мови (типи даних, розгалуження, цикли,
+функції).
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{ux43fux456ux434ux442ux440ux438ux43cux43aux430-ux43fux440ux43eux454ux43aux442ux443}{%
+\section*{Підтримка
+проєкту}\label{ux43fux456ux434ux442ux440ux438ux43cux43aux430-ux43fux440ux43eux454ux43aux442ux443}}
+\addcontentsline{toc}{section}{Підтримка проєкту}
+
+Матеріали навчального посібника створено у межах проєкту ``Підготовка,
+обробка та ефективне використання даних для наукових досліджень (на
+основі R)'', що підтримується Європейським союзою за програмою
+\href{https://houseofeurope.org.ua/}{House of Europe}.
+
+~~
+
+\hypertarget{ux434ux43eux442ux440ux438ux43cux430ux43dux43dux44f-ux43fux440ux438ux43dux446ux438ux43fux456ux432-ux434ux43eux431ux440ux43eux447ux435ux441ux43dux43eux441ux442ux456}{%
+\section*{Дотримання принципів
+доброчесності}\label{ux434ux43eux442ux440ux438ux43cux430ux43dux43dux44f-ux43fux440ux438ux43dux446ux438ux43fux456ux432-ux434ux43eux431ux440ux43eux447ux435ux441ux43dux43eux441ux442ux456}}
+\addcontentsline{toc}{section}{Дотримання принципів доброчесності}
+
+Викладач та слухач цього курсу, як очікується, повинні дотримуватися
+Кодексу академічної доброчесності університету:
+
+\begin{itemize}
+\item
+  будь-яка робота, подана здобувачем протягом курсу, має бути його
+  власною роботою здобувача; не вдаватися до кроків, що можуть нечесно
+  покращити Ваші результати чи погіршити/покращити результати інших
+  здобувачів;
+\item
+  якщо буде виявлено ознаки плагіату або іншої недобросовісної
+  академічної поведінки, то студент буде позбавлений можливості отримати
+  передбачені бали за завдання;
+\item
+  не публікувати у відкритому доступі відповіді на запитання, що
+  використовуються в рамках курсу для оцінювання знань здобувачів;
+\item
+  під час фінальних видів контролю необхідно працювати самостійно; не
+  дозволяється говорити або обговорювати, а також не можна копіювати
+  документи, використовувати електронні засоби отримання інформації.
+\end{itemize}
+
+Порушення академічної доброчесності під час виконання контрольних
+завдань призведе до втрати балів або вживання заходів, які передбачені
+Кодексу академічної доброчесності НаУОА.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, breakable, arc=.35mm, left=2mm, toprule=.15mm, colframe=quarto-callout-note-color-frame, colback=white, leftrule=.75mm, rightrule=.15mm, bottomrule=.15mm]
+\begin{minipage}[t]{5.5mm}
+\textcolor{quarto-callout-note-color}{\faInfo}
+\end{minipage}%
+\begin{minipage}[t]{\textwidth - 5.5mm}
+
+Матеріали курсу створені з використанням ряду технологій та середовищ
+розробки:
+
+\begin{itemize}
+\item[$\boxtimes$]
+  \href{https://www.r-project.org}{Мова \texttt{R}} - безкоштована мова
+  програмування для виконання досліджень у сфері статистики, машинного
+  навчання та візуалізацї результатів.
+\item[$\boxtimes$]
+  \href{https://quarto.org}{\texttt{Quarto} Book} - система для
+  публікації наукових та технічних текстів з відкритим кодом
+  (\texttt{R}/\texttt{Python}/\texttt{Julia}/\texttt{Observable}).
+\item[$\boxtimes$]
+  \href{https://github.com/jupyterlab/jupyterlab}{\texttt{JupyterLab}} -
+  середовище розробки на основі
+  \href{https://jupyter.org/}{\texttt{Jupyter\ Notebook}}.
+  \texttt{JupyterLab} є розширеним веб-інтерфейсом для роботи з
+  ноутбуками.
+\item[$\boxtimes$]
+  \href{https://git-scm.com/}{\texttt{Git}}/\href{https://github.com/}{\texttt{Github}}
+  - система контролю версій та, відповідно, сервіс для організації
+  зберігання коду, а також публікації статичних сторінок.
+\item[$\boxtimes$]
+  \href{https://www.rstudio.com/}{\texttt{RStudio\ Desktop}} -
+  інтегроване середовище розробки (\texttt{IDE}) для мови \texttt{R} з
+  відкритим кодом, що містить в собі редактор коду, консоль, планер,
+  засоби візуалізації та можливості.
+\item[$\boxtimes$]
+  \href{https://code.visualstudio.com/}{\texttt{Visual\ Studio\ Code}} -
+  інтегроване середовище розробки (\texttt{IDE}) з відкритим кодом
+  практично для усіх відомих технологій та мов програмування.
+\end{itemize}
+
+\end{minipage}%
+\end{tcolorbox}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+Бібілографічний опис \texttt{bibtex}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\VariableTok{@book}\NormalTok{\{}\OtherTok{yk}\NormalTok{{-}}\OtherTok{r}\NormalTok{{-}}\OtherTok{intro}\NormalTok{,}
+  \DataTypeTok{author}\NormalTok{       = \{Юрій Клебан\},}
+  \DataTypeTok{title}\NormalTok{        = \{Вступ до програмування в R\},}
+  \DataTypeTok{publisher}\NormalTok{    = \{Zenodo\},}
+  \DataTypeTok{year}\NormalTok{         = 2022,}
+  \DataTypeTok{doi}\NormalTok{          = \{10.5281/zenodo.7251419\},}
+  \DataTypeTok{url}\NormalTok{          = \{https://doi.org/10.5281/zenodo.7251419\}}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\bookmarksetup{startatroot}
+
+\hypertarget{ux432ux441ux442ux443ux43f}{%
+\chapter*{Вступ}\label{ux432ux441ux442ux443ux43f}}
+\addcontentsline{toc}{chapter}{Вступ}
+
+Юрій Клебан\\
+2023-03-19
+
+\hfill\break
+
+Замінити вступ! ----
+
+Фахівці спеціальності економічна кібернетика, а також фінанси та кредит
+у майбутньому працюватимуть з великими масивами даних, що накопичуються
+у даний момент і збиралися у попередні дисятиліття. Підготовка, обробка
+і трансформація даних у зручний формат прийняття рішень забирає все
+більше часу, а звичні рашіне інструменти аналізу даних, як наприклад,
+\texttt{Microsoft\ Excel} не мають достатньо вбудованих можливостей для
+виконнання задач бізнесу.
+
+На даний час існує велика кількість мов програмування, що інтегруються у
+суспільні сфери діяльності людини та роботи технічних систем:
+біоінформатика, а також економіка та бізнес.
+
+Однією з мов програмування, що отримали широке поширення серед
+економістів-науковців, аналітиків та практиків математичного моделювання
+(\texttt{machine\ learning}) є мова програмування \texttt{R}(R Core Team
+2020). Свою популярність ця мова програмування здобула завдяки простоті
+у використанні, доступності (безкоштовні як базові компоненти для
+написання коду, так і середовища розробки), розширюваності (кожен
+розробник має можливість створювати власні пакети та публікувати їх у
+відкритому доступі).
+
+Основними задачами курсу ``Вступ до прикладного програмування в R'' є
+ознайомлення студентів з базовми конструкціями мови програмування
+\texttt{R}, вивчення способів роботи з найпоширенішими типами даних,
+читання інформації з різноманітних джерел. Також студенти отримують
+знання про можливості використання \texttt{R} для виконання задач
+аналізу даних та візуалізації.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\bookmarksetup{startatroot}
+
+\hypertarget{ux441ux43fux438ux441ux43eux43a-ux432ux438ux43aux43eux440ux438ux441ux442ux430ux43dux438ux445-ux434ux436ux435ux440ux435ux43b}{%
+\chapter*{Список використаних
+джерел}\label{ux441ux43fux438ux441ux43eux43a-ux432ux438ux43aux43eux440ux438ux441ux442ux430ux43dux438ux445-ux434ux436ux435ux440ux435ux43b}}
+\addcontentsline{toc}{chapter}{Список використаних джерел}
+
+\hypertarget{refs}{}
+\begin{CSLReferences}{1}{0}
+\leavevmode\vadjust pre{\hypertarget{ref-r-base}{}}%
+R Core Team. 2020. \emph{R: A Language and Environment for Statistical
+Computing}. Vienna, Austria: R Foundation for Statistical Computing.
+\url{https://www.R-project.org/}.
+
+\end{CSLReferences}
+
+
+
+\end{document}

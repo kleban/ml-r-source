@@ -1,0 +1,10 @@
+
+cd E:\Repositories\2023\ml-r-source
+# quarto create-project . --type book
+quarto preview .
+quarto render .
+
+
+1. Render
+2. Pull to github
+3. publish

@@ -1,0 +1,80 @@
+project:
+  type: book
+  output-dir: ..\data-r\
+
+book:
+  title: "Основи машинного навчання в R"
+  subtitle: "Навчальний посібник з курсу **Прикладне математичне моделювання в `R`** для студентів спеціальності економічна кібернетика, фінанси та кредит, 3 курс"
+  author: "Юрій Клебан"
+  date: "`r Sys.Date()`"
+  date-format: short
+  google-analytics: ""
+  cover-image: img/cover.png
+  site-url: https://kleban.github.io/ml-r/
+  repo-url: https://github.com/kleban/ml-r/
+  repo-branch: main
+  sharing: [twitter, facebook, linkedin]
+  favicon: img/favicon.png
+  chapters:
+    - index.qmd
+    - 00-intro.qmd
+   # - part: "Основи роботи в R"
+   #   chapters:
+   #     - 01-what-is-r.qmd
+   #     - 02-r-history.qmd
+   #     - 03-r-environment.qmd
+   #     - 04-r-help.qmd
+    #    - 05-r-packages.qmd
+    #    - 06-r-input-output.qmd
+    #- part: "Базовий синтаксис R"
+    #  chapters: 
+   #     - 07-r-variables.qmd
+   #     - 08-r-basic-types.qmd
+   #     - 09-r-operators.qmd
+   #     - 10-r-conditions-if-else.qmd
+    #    - 11-r-loops.qmd
+   #     - 12-userful-math.qmd
+   #     - 13-r-functions.qmd
+    #- part: "Робота з даними у R"
+    #  chapters: 
+     #   - 14-r-vectors.ipynb
+     #   - 15-r-matrices.ipynb
+   #    - 16-r-factors.ipynb
+   #     - 17-r-data-frames.ipynb
+   #     - 18-r-lists.ipynb
+    #    - 19-r-apply-functions.ipynb
+   # - part: "Основи статистики в R"
+   # - tasks.qmd
+   # - solved-tasks.qmd   
+    - references.qmd
+  page-navigation: true
+  page-footer: "Copyright 2023, Юрій Клебан" 
+    
+language: _language-ua.yml 
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+    cover-image: img/cover.png
+    code-link: true
+    css: css/style.css
+    number-sections: true
+    toc: true
+    highlight-style: github
+    code-line-numbers: true
+  pdf:
+    toc: true
+    number-sections: true
+    colorlinks: true
+
+crossref:
+  tbl-title: 'Таблиця'
+  lst-title: 'Лістинг'
+  fig-title: 'Рис.'
+  fig-labels: arabic
+  title-delim: "."
+
+
+
